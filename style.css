@@ -1,7 +1,9 @@
 .topnav {
-    background-image: linear-gradient(to bottom, lightgrey, darkgrey);
+    background-image: linear-gradient(to bottom, black, dimgrey);
     overflow: hidden;
     position:fixed;
+    padding-top: 2px;
+    padding-bottom: 2px;
     left: 0px;
     top: 0px;
     width: 100%;
@@ -9,7 +11,7 @@
 
 .topnav a {
     float: left;
-    color: darkcyan;
+    color: white;
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
@@ -17,18 +19,24 @@
 }
 
 .topnav a:hover {
-    background-color: white;
-    color: black;
+    outline: 2px solid white;
+    outline-style: groove;
 }
 
 .topnav a.active {
-    background-color: grey;
-    color: lightcyan;
+    color: silver;
+    text-decoration: underline;
 }
 
 .center {
     display: block;
     margin-left: auto;
     margin-right: auto;
+}
+
+img {
+    position: center;
+    border-radius: 50%;
+
 }
 
