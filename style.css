@@ -1,5 +1,9 @@
+body { 
+    background-image: linear-gradient(to top, silver, white);
+}
+
 .topnav {
-    background-image: linear-gradient(to bottom, black, dimgrey);
+    background-color: dimgrey;
     overflow: hidden;
     position:fixed;
     padding-top: 2px;
@@ -11,7 +15,7 @@
 
 .topnav a {
     float: left;
-    color: white;
+    color: lightgrey;
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
@@ -19,12 +23,14 @@
 }
 
 .topnav a:hover {
-    outline: 2px solid white;
+    outline-color: lightgrey;
     outline-style: groove;
+    outline-width: 2px solid;
 }
 
 .topnav a.active {
-    color: silver;
+    background-color: black;
+    color: darkgrey;
     text-decoration: underline;
 }
 
@@ -37,6 +43,16 @@
 img {
     position: center;
     border-radius: 50%;
-
 }
+
+p {
+    margin-bottom:0;
+}
+
+#CounterVisitor {
+    position: absolute;
+    
+}
+
+
 

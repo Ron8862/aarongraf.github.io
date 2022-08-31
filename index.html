@@ -24,9 +24,54 @@
 
 <img src="https://i.imgur.com/1JrHVii.jpg" alt="profile photo" width="300px" height="400px">
 
-
 <p>This site is under construction</p>
 
+<p>Number of Visitors:</p>
+
+<div id="CounterVisitor"></div>
+
+<script>
+	var n = localStorage.getItem('on_load_counter');
+	
+	if (n === null) {
+	  n = 0;
+	}
+	n++;
+	
+	localStorage.setItem("on_load_counter", n);
+	
+	nums = n.toString().split('').map(Number);
+	document.getElementById('CounterVisitor').innerHTML = '';
+	for (var i of nums) {
+	  document.getElementById('CounterVisitor').innerHTML += '<span class="counter-item">' + i + '</span>';
+	}
+	</script>
+
+<br>
+<p>Current Date and Time:</p>
+<script>
+	var now = new Date();
+	var days = new Array('Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday');
+	var months = new Array('January','February','March','April','May','June','July','August','September','October','November','December');
+	var date = ((now.getDate()<10) ? "0" : "")+ now.getDate();
+	function fourdigits(number)	{
+	return (number < 1000) ? number + 1900 : number; }
+	today =  days[now.getDay()] + ", " +
+	months[now.getMonth()] + " " +
+	date + ", " +
+	(fourdigits(now.getYear())) ;
+	document.write(today);
+	</script>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
 
 
 </body>
