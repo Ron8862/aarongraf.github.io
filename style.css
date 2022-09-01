@@ -1,11 +1,11 @@
-body { 
+body {
     background-image: linear-gradient(to top, silver, white);
 }
 
 .topnav {
     background-color: dimgrey;
     overflow: hidden;
-    position:fixed;
+    position: fixed;
     padding-top: 2px;
     padding-bottom: 2px;
     left: 0px;
@@ -44,15 +44,3 @@ img {
     position: center;
     border-radius: 50%;
 }
-
-p {
-    margin-bottom:0;
-}
-
-#CounterVisitor {
-    position: absolute;
-    
-}
-
-
-
