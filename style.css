@@ -1,13 +1,12 @@
 body {
-    background-image: linear-gradient(to top, silver, white);
+    background-color: palegoldenrod;
 }
 
 .topnav {
-    background-color: dimgrey;
+    background-image: linear-gradient(to bottom, silver, white);
     overflow: hidden;
     position: fixed;
-    padding-top: 2px;
-    padding-bottom: 2px;
+    padding: 2px;
     left: 0px;
     top: 0px;
     width: 100%;
@@ -15,32 +14,31 @@ body {
 
 .topnav a {
     float: left;
-    color: lightgrey;
+    color: black;
     text-align: center;
-    padding: 14px 16px;
     text-decoration: none;
+    padding: 14px 16px;
     font-size: 18px;
 }
 
 .topnav a:hover {
-    outline-color: lightgrey;
-    outline-style: groove;
-    outline-width: 2px solid;
+    outline-color: black;
+    outline-style: solid;
+    outline-width: 2px;
 }
 
 .topnav a.active {
-    background-color: black;
-    color: darkgrey;
+    color: blue;
     text-decoration: underline;
 }
 
-.center {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
+p {
+    
 }
 
 img {
-    position: center;
-    border-radius: 50%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 35%;
 }
