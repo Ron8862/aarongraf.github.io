@@ -1,8 +1,8 @@
 body {
-    background-image: linear-gradient(45deg, palegoldenrod 25%, transparent 25%), 
-    linear-gradient(-45deg, palegoldenrod 25%, transparent 25%), 
-    linear-gradient(45deg, transparent 75%,palegoldenrod 75%), 
-    linear-gradient(-45deg, transparent 75%, palegoldenrod 75%);
+    background-image: linear-gradient(45deg, seashell 25%, transparent 25%), 
+    linear-gradient(-45deg, seashell 25%, transparent 25%), 
+    linear-gradient(45deg, transparent 75%,seashell 75%), 
+    linear-gradient(-45deg, transparent 75%, seashell 75%);
     background-size: 20px 20px;
     background-position: 0 0, 0 10px, 10px -10px, -10px 0px;
 }
@@ -11,22 +11,27 @@ body {
     background-image: linear-gradient(to top, silver, white);
     overflow: hidden;
     position: fixed;
-    padding: 2px;
     left: 0px;
     top: 0px;
     width: 100%;
 }
 
 .topnav a {
+    font-family: papyrus, fantasy;
+    font-size: 18px;
     float: left;
     color: black;
     text-align: center;
     text-decoration: none;
-    padding: 14px 16px;
-    font-size: 18px;
+    margin: 2px;
+    padding-left: 12px;
+    padding-right: 12px;
+    padding-top: 9px;
+    padding-bottom: 9px;
 }
 
 .topnav a:hover {
+    margin: 2px;
     outline-color: black;
     outline-style: solid;
     outline-width: 2px;

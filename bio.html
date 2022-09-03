@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<link rel="stylesheet" href="style.css">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Aaron Graf</title>
+</head>
+
+<body>
+	<div class="topnav">
+		<a href="index.html" id="page1">Home</a>
+		<a class="active" href="bio.html" id="page2">Bio</a>
+		<a href="projects.html" id="page3">Projects</a>
+		<a href="contact.html" id="page4">Contact</a>
+	</div>
+    <br>
+    <br>
+    <br>
+    <script>
+		var today = new Date();
+		var options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+		var now = today.toLocaleString('en-US', options);
+		document.write(now);
+	</script>
+
+</body>
+
+</html>
