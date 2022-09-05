@@ -9,21 +9,32 @@
 </head>
 
 <body>
-    <div class="topnav">
-        <a href="index.html" id="page1">Home</a>
-        <a href="bio.html" id="page2">Bio</a>
-        <a class="active" href="projects.html" id="page3">Projects</a>
-        <a href="contact.html" id="page4">Contact</a>
+	<div class="topnav">
+		<a href="index.html" id="page1">Home</a>
+		<a href="bio.html" id="page2">Bio</a>
+		<a class="active" href="projects.html" id="page3">Projects</a>
+		<a href="contact.html" id="page4">Contact</a>
 	</div>
-    <br>
-    <br>
-    <br>
-    <script>
-		var today = new Date();
-		var options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
-		var now = today.toLocaleString('en-US', options);
-		document.write(now);
-	</script>
+	<br>
+	<br>
+	<h2>Sample Website</h2>
+	<iframe src="page1.html" height="600" width="1500"></iframe>
+	<br>
+	<br>
+	<p>Additional Projects:</p>
+	<p></p>
+	<p>Link</p>
+	<p>Link</p>
+	<br>
+	<br>
+	<footer>
+		<script>
+			var today = new Date();
+			var options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+			var now = today.toLocaleString('en-US', options);
+			document.write(now);
+		</script>
+	</footer>
 
 </body>
 

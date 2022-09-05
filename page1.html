@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="mystyle.css">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Home</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-light bg-primary fixed-top">
+        <div class="topnav">
+            <a href="page1.html">Home</a>
+            <a href="page2.html">Box Office</a>
+            <a href="page3.html">Ratings</a>
+            <a href="page4.html">Awards</a>
+            <a href="page5.html">Upcoming Films</a>
+        </div>
+        <form class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+            <button style="background-color:white; color:black" type="submit">Enter</button>
+        </form>
+    </nav>
+    <h1>Film Database</h1>
+    <p>Welcome to Film Database. A site dedicated for film buffs that contains important stats about films</p>
+    <p>such as reviews, box office numbers and ratings as well as info for upcoming films.</p>
+    <br>
+    <p style="text-align:center;"><img
+            src="https://cdn.vox-cdn.com/thumbor/e7gqbRaKlqL9bYNVWlx2ERJZ27o=/4x0:981x651/1200x800/filters:focal(4x0:981x651)/cdn.vox-cdn.com/uploads/chorus_image/image/49316019/Screen_Shot_2015-05-08_at_12.32.14_PM.0.0.png"
+            width="1485" height="700" alt="Movie Theatre"></p>
+    <br>
+    <br>
+    <p>Now Playing</p>
+    <ul>
+        <li>Jumanji: The Next Level</li>
+        <li>Frozen II</li>
+        <li>Knives Out </li>
+        <li>Richard Jewell</li>
+        <li>Black Christmas</li>
+    </ul>
+    <br>
+    <p>Opening This Week</p>
+    <ul>
+        <li>Cunningham </li>
+        <li>Uncut Gems</li>
+        <li>A Hidden Life</li>
+        <li>Seberg</li>
+        <li>Ford v Ferrari</li>
+    </ul>
+    <br>
+    <br>
+    <h1>Newsletter</h1>
+    <p>Please fill in this form to sign up for our newsletter</p>
+    <br>
+    <form action="action_page.php">
+        <div class="container">
+            <label for="name">Name</label>
+            <input id="name">
+            <br>
+            <label for="email">Email</label>
+            <input id="email">
+            <br>
+            <button type="submit" class="registerbtn">Register</button>
+            <br>
+        </div>
+        <p>By signing up you agree to our <a href="#">Terms & Privacy</a></p>
+    </form>
+    <br>
+    <br>
+    <footer>
+        Updated as of Dec.1st, 2019
+        &nbsp;
+        &nbsp;
+        &nbsp;
+        &nbsp;
+        &nbsp;
+        &nbsp;
+        &nbsp;
+        &nbsp;
+        &nbsp;
+        &nbsp;
+        &nbsp;
+        &nbsp;
+        &nbsp;
+        &nbsp;
+        &nbsp;
+        &nbsp;
+        &nbsp;
+        &nbsp;
+        &nbsp;
+        &nbsp;
+        &nbsp;
+        &nbsp;
+        &nbsp;
+        &nbsp;
+        &nbsp;
+        &nbsp;
+        &nbsp;
+        &nbsp;
+        &nbsp;
+        &nbsp;
+        &nbsp;
+        &nbsp;
+        &nbsp;
+        &nbsp;
+        &nbsp;
+        &nbsp;
+        &nbsp;
+        &nbsp;
+        &nbsp;
+        &nbsp;
+        &nbsp;
+        &nbsp;
+        &nbsp;
+        &nbsp;
+        &nbsp;
+        &nbsp;
+        &nbsp;
+        &nbsp;
+        &nbsp;
+        &nbsp;
+        &nbsp;
+        &nbsp;
+        &nbsp;
+        Email: <a href="mailto:someone@example.com">filmdatabase@gmail.com</a>
+        &nbsp;
+        &nbsp;
+        &nbsp;
+        &nbsp;
+        &nbsp;
+        &nbsp;
+        &nbsp;
+        &nbsp;
+        &nbsp;
+        &nbsp;
+        &nbsp;
+        &nbsp;
+        &nbsp;
+        &nbsp;
+        &nbsp;
+        &nbsp;
+        &nbsp;
+        &nbsp;
+        &nbsp;
+        &nbsp;
+        &nbsp;
+        &nbsp;
+        &nbsp;
+        &nbsp;
+        &nbsp;
+        &nbsp;
+        &nbsp;
+        &nbsp;
+        &nbsp;
+        &nbsp;
+        &nbsp;
+        &nbsp;
+        &nbsp;
+        &nbsp;
+        &nbsp;
+        &nbsp;
+        &nbsp;
+        &nbsp;
+        &nbsp;
+        &nbsp;
+        &nbsp;
+        &nbsp;
+        &nbsp;
+        &nbsp;
+        &nbsp;
+        &nbsp;
+        &nbsp;
+        &nbsp;
+        &nbsp;
+        <script>
+            var now = new Date();
+            var days = new Array('Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday');
+            var months = new Array('January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December');
+            var date = ((now.getDate() < 10) ? "0" : "") + now.getDate();
+            function fourdigits(number) {
+                return (number < 1000) ? number + 1900 : number;
+            }
+            today = days[now.getDay()] + ", " +
+                months[now.getMonth()] + " " +
+                date + ", " +
+                (fourdigits(now.getYear()));
+            document.write(today);
+        </script>
+    </footer>
+</body>
+
+</html>
