@@ -11,227 +11,238 @@
 <body>
 	<div class="topnav">
 		<a class="active" href="index.html" id="page1">Home</a>
-		<a href="bio.html" id="page2">Bio</a>
-		<a href="projects.html" id="page3">Projects</a>
-		<a href="contact.html" id="page4">Contact</a>
+		<a href="projects.html" id="page2">Projects</a>
+		<a href="contact.html" id="page3">Contact</a>
 	</div>
 	<br>
 	<br>
 	<br>
-	<p>This site is under construction</p>
 	<br>
-	<br>
-	<img src="https://i.imgur.com/1JrHVii.jpg" alt="profile photo" width="150px" height="200px">
+	<div class="p">
+		<p>Hello, and welcome to my personal website. This site serves the purpose of showcasing my work in web design
+			and
+			development.</p>
+		<p>From a very early age I had an interest in computers and I grew up when the internet and personal computers
+			were
+			starting to become widely adopted.</p>
+		<p>From that position I became familiar and adept at using computers and understanding how they work which
+			allowed me
+			to develop my technical skills over time.</p>
+		<p>Starting in 2019, I took a formal program in web design and earned a certificate in 2022 and starting that
+			same
+			year I am taking another formal program</p>
+		<p>in web development and internet applications. I am familiar with HTML, CSS, JavaScript, REACT, Java, C#, PHP,
+			Python, MySQL and Git/GitHub.</p>
+	</div>
 	<br>
 	<br>
 	<section>
-	<h2>Snake</h2>
-	<canvas id="stage" height="400" width="520"></canvas>
-	<script>
-		var Game = Game || {};
-		var Keyboard = Keyboard || {};
-		var Component = Component || {};
+		<h2>Click on the Canvas to play Snake</h2>
+		<canvas id="stage" height="400" width="520"></canvas>
+		<script>
+
+			var Game = Game || {};
+			var Keyboard = Keyboard || {};
+			var Component = Component || {};
 
 
-		Keyboard.Keymap = {
-			37: 'left',
-			38: 'up',
-			39: 'right',
-			40: 'down'
-		};
-
-
-		Keyboard.ControllerEvents = function () {
-
-			// Sets
-			var self = this;
-			this.pressKey = null;
-			this.keymap = Keyboard.Keymap;
-
-			// Keydown Event
-			document.onkeydown = function (event) {
-				self.pressKey = event.which;
+			Keyboard.Keymap = {
+				37: 'left',
+				38: 'up',
+				39: 'right',
+				40: 'down'
 			};
 
-			// Get Key
-			this.getKey = function () {
-				return this.keymap[this.pressKey];
-			};
-		};
 
-		Component.Stage = function (canvas, conf) {
+			Keyboard.ControllerEvents = function () {
 
-			// Sets
-			this.keyEvent = new Keyboard.ControllerEvents();
-			this.width = canvas.width;
-			this.height = canvas.height;
-			this.length = [];
-			this.food = {};
-			this.score = 0;
-			this.direction = 'right';
-			this.conf = {
-				cw: 10,
-				size: 5,
-				fps: 1000
-			};
+				// Sets
+				var self = this;
+				this.pressKey = null;
+				this.keymap = Keyboard.Keymap;
 
-			// Merge Conf
-			if (typeof conf == 'object') {
-				for (var key in conf) {
-					if (conf.hasOwnProperty(key)) {
-						this.conf[key] = conf[key];
-					}
-				}
-			}
+				// Keydown Event
+				document.onkeydown = function (event) {
+					self.pressKey = event.which;
+				};
 
-		};
-
-		Component.Snake = function (canvas, conf) {
-
-			// Game Stage
-			this.stage = new Component.Stage(canvas, conf);
-
-			// Init Snake
-			this.initSnake = function () {
-
-				// Itaration in Snake Conf Size
-				for (var i = 0; i < this.stage.conf.size; i++) {
-
-					// Add Snake Cells
-					this.stage.length.push({ x: i, y: 0 });
-				}
-			};
-
-			// Call init Snake
-			this.initSnake();
-
-			// Init Food  
-			this.initFood = function () {
-
-				// Add food on stage
-				this.stage.food = {
-					x: Math.round(Math.random() * (this.stage.width - this.stage.conf.cw) / this.stage.conf.cw),
-					y: Math.round(Math.random() * (this.stage.height - this.stage.conf.cw) / this.stage.conf.cw),
+				// Get Key
+				this.getKey = function () {
+					return this.keymap[this.pressKey];
 				};
 			};
 
-			// Init Food
-			this.initFood();
+			Component.Stage = function (canvas, conf) {
 
-			// Restart Stage
-			this.restart = function () {
-				this.stage.length = [];
-				this.stage.food = {};
-				this.stage.score = 0;
-				this.stage.direction = 'right';
-				this.stage.keyEvent.pressKey = null;
+				// Sets
+				this.keyEvent = new Keyboard.ControllerEvents();
+				this.width = canvas.width;
+				this.height = canvas.height;
+				this.length = [];
+				this.food = {};
+				this.score = 0;
+				this.direction = 'right';
+				this.conf = {
+					cw: 10,
+					size: 5,
+					fps: 1000
+				};
+
+				// Merge Conf
+				if (typeof conf == 'object') {
+					for (var key in conf) {
+						if (conf.hasOwnProperty(key)) {
+							this.conf[key] = conf[key];
+						}
+					}
+				}
+
+			};
+
+			Component.Snake = function (canvas, conf) {
+
+				// Game Stage
+				this.stage = new Component.Stage(canvas, conf);
+
+				// Init Snake
+				this.initSnake = function () {
+
+					// Itaration in Snake Conf Size
+					for (var i = 0; i < this.stage.conf.size; i++) {
+
+						// Add Snake Cells
+						this.stage.length.push({ x: i, y: 0 });
+					}
+				};
+
+				// Call init Snake
 				this.initSnake();
+
+				// Init Food  
+				this.initFood = function () {
+
+					// Add food on stage
+					this.stage.food = {
+						x: Math.round(Math.random() * (this.stage.width - this.stage.conf.cw) / this.stage.conf.cw),
+						y: Math.round(Math.random() * (this.stage.height - this.stage.conf.cw) / this.stage.conf.cw),
+					};
+				};
+
+				// Init Food
 				this.initFood();
-			};
-		};
 
-		Game.Draw = function (context, snake) {
-
-			// Draw Stage
-			this.drawStage = function () {
-
-				// Check Keypress And Set Stage direction
-				var keyPress = snake.stage.keyEvent.getKey();
-				if (typeof (keyPress) != 'undefined') {
-					snake.stage.direction = keyPress;
-				}
-
-				// Draw White Stage
-				context.fillStyle = "white";
-				context.fillRect(0, 0, snake.stage.width, snake.stage.height);
-
-				// Snake Position
-				var nx = snake.stage.length[0].x;
-				var ny = snake.stage.length[0].y;
-
-				// Add position by stage direction
-				switch (snake.stage.direction) {
-					case 'right':
-						nx++;
-						break;
-					case 'left':
-						nx--;
-						break;
-					case 'up':
-						ny--;
-						break;
-					case 'down':
-						ny++;
-						break;
-				}
-
-				// Check Collision
-				if (this.collision(nx, ny) == true) {
-					snake.restart();
-					return;
-				}
-
-				// Logic of Snake food
-				if (nx == snake.stage.food.x && ny == snake.stage.food.y) {
-					var tail = { x: nx, y: ny };
-					snake.stage.score++;
-					snake.initFood();
-				} else {
-					var tail = snake.stage.length.pop();
-					tail.x = nx;
-					tail.y = ny;
-				}
-				snake.stage.length.unshift(tail);
-
-				// Draw Snake
-				for (var i = 0; i < snake.stage.length.length; i++) {
-					var cell = snake.stage.length[i];
-					this.drawCell(cell.x, cell.y);
-				}
-
-				// Draw Food
-				this.drawCell(snake.stage.food.x, snake.stage.food.y);
-
-				// Draw Score
-				context.fillText('Score: ' + snake.stage.score, 5, (snake.stage.height - 5));
+				// Restart Stage
+				this.restart = function () {
+					this.stage.length = [];
+					this.stage.food = {};
+					this.stage.score = 0;
+					this.stage.direction = 'right';
+					this.stage.keyEvent.pressKey = null;
+					this.initSnake();
+					this.initFood();
+				};
 			};
 
-			// Draw Cell
-			this.drawCell = function (x, y) {
-				context.fillStyle = 'rgb(170, 170, 170)';
-				context.beginPath();
-				context.arc((x * snake.stage.conf.cw + 6), (y * snake.stage.conf.cw + 6), 4, 0, 2 * Math.PI, false);
-				context.fill();
+			Game.Draw = function (context, snake) {
+
+				// Draw Stage
+				this.drawStage = function () {
+
+					// Check Keypress And Set Stage direction
+					var keyPress = snake.stage.keyEvent.getKey();
+					if (typeof (keyPress) != 'undefined') {
+						snake.stage.direction = keyPress;
+					}
+
+					// Draw White Stage
+					context.fillStyle = "white";
+					context.fillRect(0, 0, snake.stage.width, snake.stage.height);
+
+					// Snake Position
+					var nx = snake.stage.length[0].x;
+					var ny = snake.stage.length[0].y;
+
+					// Add position by stage direction
+					switch (snake.stage.direction) {
+						case 'right':
+							nx++;
+							break;
+						case 'left':
+							nx--;
+							break;
+						case 'up':
+							ny--;
+							break;
+						case 'down':
+							ny++;
+							break;
+					}
+
+					// Check Collision
+					if (this.collision(nx, ny) == true) {
+						snake.restart();
+						return;
+					}
+
+					// Logic of Snake food
+					if (nx == snake.stage.food.x && ny == snake.stage.food.y) {
+						var tail = { x: nx, y: ny };
+						snake.stage.score++;
+						snake.initFood();
+					} else {
+						var tail = snake.stage.length.pop();
+						tail.x = nx;
+						tail.y = ny;
+					}
+					snake.stage.length.unshift(tail);
+
+					// Draw Snake
+					for (var i = 0; i < snake.stage.length.length; i++) {
+						var cell = snake.stage.length[i];
+						this.drawCell(cell.x, cell.y);
+					}
+
+					// Draw Food
+					this.drawCell(snake.stage.food.x, snake.stage.food.y);
+
+					// Draw Score
+					context.fillText('Score: ' + snake.stage.score, 5, (snake.stage.height - 5));
+				};
+
+				// Draw Cell
+				this.drawCell = function (x, y) {
+					context.fillStyle = 'rgb(170, 170, 170)';
+					context.beginPath();
+					context.arc((x * snake.stage.conf.cw + 6), (y * snake.stage.conf.cw + 6), 4, 0, 2 * Math.PI, false);
+					context.fill();
+				};
+
+				// Check Collision with walls
+				this.collision = function (nx, ny) {
+					if (nx == -1 || nx == (snake.stage.width / snake.stage.conf.cw) || ny == -1 || ny == (snake.stage.height / snake.stage.conf.cw)) {
+						return true;
+					}
+					return false;
+				}
 			};
 
-			// Check Collision with walls
-			this.collision = function (nx, ny) {
-				if (nx == -1 || nx == (snake.stage.width / snake.stage.conf.cw) || ny == -1 || ny == (snake.stage.height / snake.stage.conf.cw)) {
-					return true;
-				}
-				return false;
-			}
-		};
+			Game.Snake = function (elementId, conf) {
 
-		Game.Snake = function (elementId, conf) {
+				// Sets
+				var canvas = document.getElementById(elementId);
+				var context = canvas.getContext("2d");
+				var snake = new Component.Snake(canvas, conf);
+				var gameDraw = new Game.Draw(context, snake);
 
-			// Sets
-			var canvas = document.getElementById(elementId);
-			var context = canvas.getContext("2d");
-			var snake = new Component.Snake(canvas, conf);
-			var gameDraw = new Game.Draw(context, snake);
+				// Game Interval
+				setInterval(function () { gameDraw.drawStage(); }, snake.stage.conf.fps);
+			};
 
-			// Game Interval
-			setInterval(function () { gameDraw.drawStage(); }, snake.stage.conf.fps);
-		};
-
-		window.onload = function () {
-			var snake = new Game.Snake('stage', { fps: 100, size: 4 });
-		};
-	</script>
+			window.onclick = function () {
+				var snake = new Game.Snake('stage', { fps: 100, size: 4 });
+			};
+		</script>
 	</section>
-	<br>
-	<br>
 	<footer>
 		<script>
 			var today = new Date();
